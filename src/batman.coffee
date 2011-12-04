@@ -3925,7 +3925,7 @@ Batman.DOM = {
   onParseExit: $onParseExit = (node, callback) ->
     set = Batman._data(node, 'onParseExit') || Batman._data(node, 'onParseExit', new Batman.SimpleSet)
     set.add callback if callback?
-    set
+    set || new Batman.SimpleSet
 
   forgetParseExit: $forgetParseExit = (node, callback) -> Batman.removeData(node, 'onParseExit', true)
 }
